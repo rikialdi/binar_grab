@@ -17,6 +17,14 @@ public class BarangController {
     @Autowired
     private BarangService servis;
 
+    @GetMapping("test")
+    @ResponseBody
+    public ResponseEntity<Map> test() {
+        Map map = new HashMap();
+        map.put("data", "sukses saya");
+        return new ResponseEntity<Map>(map, HttpStatus.OK);
+    }
+
     @GetMapping("list")
     @ResponseBody
     public ResponseEntity<List<Barang>> getList() {
