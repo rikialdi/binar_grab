@@ -1,7 +1,7 @@
 package com.binar.grab.controller;
 
-import com.binar.grab.model.Barang;
-import com.binar.grab.service.BarangService;
+import com.binar.grab.model.BarangDummy;
+import com.binar.grab.service.BarangDummyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,9 +13,9 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/v1/binar/")// localhost :8080/v1/binar
-public class BarangController {
+public class BarangDummyController {
     @Autowired
-    private BarangService servis;
+    private BarangDummyService servis;
 
     @GetMapping("test")
     @ResponseBody
@@ -27,20 +27,20 @@ public class BarangController {
 
     @GetMapping("list")
     @ResponseBody
-    public ResponseEntity<List<Barang>> getList() {
-        List<Barang> c = servis.list();
-        return new ResponseEntity<List<Barang>>(c, HttpStatus.OK);
+    public ResponseEntity<List<BarangDummy>> getList() {
+        List<BarangDummy> c = servis.list();
+        return new ResponseEntity<List<BarangDummy>>(c, HttpStatus.OK);
     }
     @PostMapping("save")
     public ResponseEntity<Map> save(
-            @RequestBody Barang objModel) {
+            @RequestBody BarangDummy objModel) {
         Map obj = servis.save(objModel);
         return new ResponseEntity<Map>(obj, HttpStatus.OK);// response
     }
 
     @PutMapping("update")
     public ResponseEntity<Map> update(
-            @RequestBody Barang objModel) {
+            @RequestBody BarangDummy objModel) {
         Map c = servis.update(objModel);
         return new ResponseEntity<Map>(c, HttpStatus.OK);
     }

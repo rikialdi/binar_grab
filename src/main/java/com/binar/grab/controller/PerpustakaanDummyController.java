@@ -1,6 +1,5 @@
 package com.binar.grab.controller;
 
-import com.binar.grab.model.Barang;
 import com.binar.grab.model.PerpustakaanDummy;
 import com.binar.grab.service.PerpustakaanDummyService;
 import org.springframework.beans.factory.annotation.Autowired;

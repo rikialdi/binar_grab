@@ -1,62 +1,86 @@
 package com.binar.grab.service.impl;
 
 import com.binar.grab.model.Barang;
+import com.binar.grab.model.Mahasiswa;
+import com.binar.grab.model.Supplier;
+import com.binar.grab.repository.BarangRepository;
+import com.binar.grab.repository.SupplierRepository;
 import com.binar.grab.service.BarangService;
-import org.springframework.stereotype.Service;
+import com.binar.grab.util.TemplateResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-@Service
-public class BarangImpl  implements BarangService{
+public class BarangImpl implements BarangService {
 
-   static List<Barang> barangStatic = new ArrayList<>();
-    @Override
-    public Map save(Barang barang) {
-        Map map = new HashMap();
-        map.put("data",barang);
-        map.put("status","sukses");
-        map.put("message","200");
-        barangStatic.add(barang);
-        return map;
-    }
+    //1. call repository banrang dan supplierbi
+    @Autowired
+    public BarangRepository barangRepository;
+
+    @Autowired
+    public SupplierRepository supplierRepository;
+
+    @Autowired
+    public TemplateResponse templateResponse;
 
     @Override
-    public List<Barang> list() {
-        Map map = new HashMap();
-        map.put("data",barangStatic);
-        map.put("status","sukses");
-        map.put("message","200");
-        return barangStatic;
-    }
-
-    @Override
-    public Map update(Barang barang) {
-        Barang update = new Barang();
-        for(Barang obj : barangStatic  ){
-            if(obj.getId() == barang.getId()){
-                update.setId(obj.getId());
-                update.setHarga(obj.getHarga());
-                update.setNama(obj.getNama());
-                barangStatic.remove(obj);
-                barangStatic.add(update);
+    public Map insert(Barang obj, Long idsupplier) {
+        try {
+            if(templateResponse.chekNull(obj.getNama())){
+                return   templateResponse.templateEror("Nama is Requiered");
             }
+
+            if(templateResponse.chekNull(obj.getHarga())){
+                return  templateResponse.templateEror("Harga is requiered");
+            }
+
+            if(templateResponse.chekNull(idsupplier)){
+                return templateResponse.templateEror("Id Supplier is requiered");
+            }
+            Supplier chekId = supplierRepository.getbyID(idsupplier);
+            if(templateResponse.chekNull(chekId)){
+                return   templateResponse.templateEror("Id Supplier NOt found");
+            }
+            //do save
+            obj.setSupplier(chekId);
+            Barang barangSave = barangRepository.save(obj);
+            return templateResponse.templateSukses(barangSave);
+        }catch (Exception e){
+            return templateResponse.templateEror(e);
         }
-        Map map = new HashMap();
-        map.put("data",update);
-        map.put("status","sukses");
-        map.put("message","200");
-        return map;
+
     }
 
     @Override
-    public void delete(Long id) {
-        for(Barang obj : barangStatic  ){
-            if(obj.getId() == id){
-                barangStatic.remove(obj);
-            }
-        }
+    public Map getAll(int size, int page) {
+        Pageable show_data = PageRequest.of(page, size);
+        Page<Barang> list = barangRepository.getAllData(show_data);
+        return templateResponse.templateSukses(list);
+    }
+
+
+    @Override
+    public Map update(Barang barang, Long idsupplier) {
+        return null;
+    }
+
+    @Override
+    public Map delete(Long barang) {
+        return null;
+    }
+
+
+
+    @Override
+    public Map findByNama(String nama, Integer page, Integer size) {
+        return null;
+    }
+
+    @Override
+    public Page<Barang> findByNamaLike(String nama, Pageable pageable) {
+        return null;
     }
 }
