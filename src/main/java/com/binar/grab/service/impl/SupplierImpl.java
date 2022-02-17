@@ -5,11 +5,20 @@ import com.binar.grab.repository.SupplierRepository;
 import com.binar.grab.service.SupplierService;
 import com.binar.grab.util.TemplateResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+@Service
 public class SupplierImpl  implements SupplierService {
     //panggil repository :
+    /*
+    1. entity - OK
+    2. service - fokus supplirt, barang
+    3. service impl
+    4. repositpry
+    5. controller
+     */
     @Autowired
     public SupplierRepository supplierRepository;
 
@@ -20,11 +29,11 @@ public class SupplierImpl  implements SupplierService {
     public Map insert(Supplier obj) {
         try {
             if(templateResponse.chekNull(obj.getNama())){
-                templateResponse.templateEror("Nama Tidak boleh null");
+              return   templateResponse.templateEror("Nama Tidak boleh null");
             }
 
             if(templateResponse.chekNull(obj.getAlamat())){
-                templateResponse.templateEror("Alamat Tidak boleh null");
+                return   templateResponse.templateEror("Alamat Tidak boleh null");
             }
             Supplier saveObj =  supplierRepository.save(obj);
             return templateResponse.templateSukses(saveObj);
