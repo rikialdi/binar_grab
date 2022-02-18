@@ -28,6 +28,9 @@ public class BarangImpl implements BarangService {
     @Autowired
     public BarangRepository barangRepository;
 
+    public static final Logger log = LoggerFactory.getLogger(BarangImpl.class);
+
+
     @Autowired
     public SupplierRepository supplierRepository;
 
@@ -158,7 +161,6 @@ public class BarangImpl implements BarangService {
         }
     }
 
-    public static final Logger log = LoggerFactory.getLogger(BarangImpl.class);
 
     @Override
     public Page<Barang> findByNamaLike(String nama, Pageable pageable) {

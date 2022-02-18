@@ -1,6 +1,7 @@
 package com.binar.grab.model;
 
 import lombok.*;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.Entity;
 import javax.persistence.*;
@@ -10,7 +11,8 @@ import java.io.Serializable;
 @Getter
 @Entity
 @Table(name = "pembeli")
-public class Pembeli implements Serializable
+@Where(clause = "deleted_date is null")
+public class Pembeli extends AbstractDate implements Serializable
 {
     @Id
     @Column(name="id")

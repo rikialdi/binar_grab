@@ -1,5 +1,6 @@
 package com.binar.grab.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -24,6 +25,7 @@ public class PembeliDetail implements Serializable {
     @Column(name = "alamat", columnDefinition="TEXT")
     private String alamat;
 
+    @JsonIgnore
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_pembeli", referencedColumnName = "id")
     private Pembeli pembeli; // step one one : FK

@@ -17,6 +17,7 @@ public class Barang extends AbstractDate implements Serializable {
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "nama", nullable = false, length = 45)
     private String nama;
 
