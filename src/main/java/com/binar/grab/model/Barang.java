@@ -28,7 +28,7 @@ public class Barang extends AbstractDate implements Serializable {
     private String satuan;
 
     @Column(name = "harga",length = 11)
-    private int harga;
+    private Double harga;
 
     // wajib
     @ManyToOne(targetEntity = Supplier.class, cascade = CascadeType.ALL)
