@@ -86,6 +86,7 @@ public class TransaksiImpl implements TransaksiService {
             id pembeli
             qty
              */
+
             if(templateResponse.chekNull(request.getIdBarang())){
                 return   templateResponse.templateEror("Id Barang Tidak boleh null");
             }
@@ -96,13 +97,14 @@ public class TransaksiImpl implements TransaksiService {
             if(templateResponse.chekNull(request.getId())){
                 return   templateResponse.templateEror("Id Transaksi Tidak boleh null");
             }
+
             Barang chekIdBarang =  barangRepository.getbyID(request.getIdBarang());
             if(templateResponse.chekNull(chekIdBarang)){
                 return   templateResponse.templateEror("Id Barang Tidak ada di database");
             }
 
             Pembeli chekIdPembeli =  pembeliRepository.getbyID(request.getIdPembeli());
-            if(templateResponse.chekNull(chekIdBarang)){
+            if(templateResponse.chekNull(chekIdPembeli)){
                 return   templateResponse.templateEror("Id Pembeli Tidak ada di database");
             }
 
