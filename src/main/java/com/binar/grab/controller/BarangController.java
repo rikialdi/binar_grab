@@ -54,6 +54,14 @@ public class BarangController {
         return new ResponseEntity<Map>(list, new HttpHeaders(), HttpStatus.OK);
     }
 
+    /*
+    kita ingin call rest kita sendiri: barang
+    a. post localhost:8082/api/v1/binar/barang/save/{idsupplier}
+    b. put localhost:8082/api/v1/binar/barang/update/{idsupplier}
+    c. delete localhost:8082/api/v1/binar/barang/delete/{id}
+    d. get localhost:8082/api/v1/binar/barang/list
+
+     */
 
 
 
