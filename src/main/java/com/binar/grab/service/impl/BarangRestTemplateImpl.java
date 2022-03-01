@@ -100,11 +100,6 @@ public class BarangRestTemplateImpl implements BarangRestTemplateService {
     @Override
     public Map update(Barang barangReq, Long idsupplier) {
         try {
-/*
-1. chek id supplirt - =takutnyanya suppliar tidak ada
-2. chek id barang - apakah ada atau ga di db
-3. simpan ke database
- */
             if (templateResponse.chekNull(idsupplier)) {
                 return templateResponse.templateEror("Id Supplier is requiered");
             }
@@ -140,11 +135,6 @@ public class BarangRestTemplateImpl implements BarangRestTemplateService {
 
     @Override
     public Map delete(Long barang) {
-        /*
-        soft delete , bukan delete permanent
-        1. chek id barang
-        2. update , tanggal deleted saja
-         */
         try {
             if (templateResponse.chekNull(barang)) {
                 return templateResponse.templateEror("Id Barang is required");
