@@ -43,8 +43,8 @@ public class UserServiceImpl implements UserService {
             user.setUsername(objModel.getEmail().toLowerCase());
             user.setFullname(objModel.getFullname());
 
-            //step 1 :
-//            user.setEnabled(false); // matikan user
+            //step 1 : perlu aktifkan,
+            user.setEnabled(false); // matikan user
 
             String password = encoder.encode(objModel.getPassword().replaceAll("\\s+", ""));
             List<Role> r = repoRole.findByNameIn(roleNames);
