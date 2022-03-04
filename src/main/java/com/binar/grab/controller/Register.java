@@ -49,6 +49,7 @@ public class Register {
         }
         map = serviceReq.registerManual(objModel);
 
+        Map sendOTP = sendEmailegister(objModel);
 
         return new ResponseEntity<Map>(map, HttpStatus.OK);
     }
