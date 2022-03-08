@@ -38,6 +38,8 @@ public class Register {
 
     @Autowired
     public TemplateResponse templateCRUD;
+
+    //step 1
     @PostMapping("/register")
     public ResponseEntity<Map> saveRegisterManual(@RequestBody RegisterModel objModel) throws RuntimeException {
         Map map = new HashMap();
@@ -94,5 +96,27 @@ public class Register {
         }
         emailSender.sendAsync(found.getUsername(), "Register", template);
         return templateCRUD.templateSukses(message);
+    }
+
+    //step 3 : konfirmasi OTP
+    @GetMapping("/register-confirm-otp/{token}")
+    public ResponseEntity<Map> saveRegisterManual(@PathVariable(value = "token") String tokenOtp) throws RuntimeException {
+
+
+        User user = userRepository.findOneByOTP(tokenOtp);
+        if (null == user) {
+            return new ResponseEntity<Map>(templateCRUD.templateEror("OTP tidak ditemukan"), HttpStatus.OK);
+        }
+        String today = config.convertDateToString(new Date());
+
+        String dateToken = config.convertDateToString(user.getOtpExpiredDate());
+        if(Long.parseLong(today) > Long.parseLong(dateToken)){
+            return new ResponseEntity<Map>(templateCRUD.templateEror("Your token is expired. Please Get token again."), HttpStatus.OK);
+        }
+        //update user
+        user.setEnabled(true);
+        userRepository.save(user);
+
+        return new ResponseEntity<Map>(templateCRUD.templateEror("Sukses, Silahkan Melakukan Login"), HttpStatus.OK);
     }
 }
