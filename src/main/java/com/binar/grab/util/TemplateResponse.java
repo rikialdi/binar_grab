@@ -30,6 +30,7 @@ public class TemplateResponse {
         return map;
     }
 
+
     public boolean chekNull(Object obj){
         if(obj == null){
             return true;

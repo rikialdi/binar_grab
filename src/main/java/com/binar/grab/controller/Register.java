@@ -39,6 +39,13 @@ public class Register {
     @Autowired
     public TemplateResponse templateCRUD;
 
+
+    @Autowired
+    public EmailTemplate emailTemplate;
+
+    @Autowired
+    public EmailSender emailSender;
+
     //step 1
     @PostMapping("/register")
     public ResponseEntity<Map> saveRegisterManual(@RequestBody RegisterModel objModel) throws RuntimeException {
@@ -56,11 +63,6 @@ public class Register {
         return new ResponseEntity<Map>(map, HttpStatus.OK);
     }
 
-    @Autowired
-    public EmailTemplate emailTemplate;
-
-    @Autowired
-    public EmailSender emailSender;
 
     // Step 2: sendp OTP berupa URL: guna updeta enable agar bisa login:
     @PostMapping("/send-otp")//send OTP
