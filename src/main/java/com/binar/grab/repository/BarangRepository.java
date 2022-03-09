@@ -10,6 +10,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
+
 @Repository //step 2
 public interface BarangRepository extends
         PagingAndSortingRepository<Barang, Long> {
@@ -33,5 +35,12 @@ public interface BarangRepository extends
     public Barang findBySatuanAndHargaOrNama(String satuan, int harga,  String nama);
 
     public Barang findBySatuanAndHargaOrNamaLike(String satuan, int harga,  String nama);// "'%%'"
+
+    @Query("select c from Barang c where  c.harga BETWEEN :priceMin and :priceMax")// nama class
+    Page<Barang> getDataByPrice( Double priceMin, Double priceMax, Pageable pageable);
+
+    @Query("select c from Barang c where  c.harga BETWEEN :priceMin and :priceMax and c.nama like :nama")// nama class
+    Page<Barang> getDataByPriceAndNama( Double priceMin, Double priceMax,String nama, Pageable pageable);
+
 
 }
