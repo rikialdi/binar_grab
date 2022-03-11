@@ -1,0 +1,1829 @@
+{
+	"info": {
+		"_postman_id": "75aa6223-ce95-4fae-9fab-6cae3a1ac5cb",
+		"name": "d2r",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "rqps",
+			"item": [
+				{
+					"name": "sizeColorCondition",
+					"item": [
+						{
+							"name": "size",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "16.0",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "orderby",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "ordertype",
+											"value": "asc",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "Tops",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/size",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"size"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "size get Type",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "16.0",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "orderby",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "ordertype",
+											"value": "asc",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "Tops",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/size/type",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"size",
+										"type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "colour",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "White",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "orderby",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "ordertype",
+											"value": "desc",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/condition",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"condition"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "condition",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "rarely worn",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "orderby",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "ordertype",
+											"value": "desc",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/condition",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"condition"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "category+sub category",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "shoes",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "orderby",
+											"value": "name",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "ordertype",
+											"value": "asc",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/category",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cate get Type",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/category/type",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"category",
+										"type"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Question - Lookup",
+					"item": [
+						{
+							"name": "feedBackSeller",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "shoes",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "orderby",
+											"value": "name",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "ordertype",
+											"value": "asc",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "feedBackSeller",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/lookup",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"lookup"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "API User",
+					"item": [
+						{
+							"name": "Forgot Password",
+							"item": [
+								{
+									"name": "Step 1:Send OTP Forget Password",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"rikialdipari96@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rqps/forgot-password",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rqps",
+												"forgot-password"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Step 2: Reset Password",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"otp\":\"331087\",\r\n    \"newPassword\":\"password\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rqps/forgot-password-reset",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rqps",
+												"forgot-password-reset"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Register",
+							"item": [
+								{
+									"name": "Register",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\":\"t1@gmail.com\",\r\n    \"password\":\"password\",\r\n    \"fullname\":\"fullname1\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/rqps/register",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"rqps",
+												"register"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "profile",
+							"item": [
+								{
+									"name": "Delete Account User",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\":\"3\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/v1/user/enable-user",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"v1",
+												"user",
+												"enable-user"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Holiday Mode",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\":\"3\",\r\n    \"holidayStartDate\":\"2021-01-22\",\r\n    \"holidayEndDate\":\"2021-05-22\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/v1/user/holiday-mode",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"v1",
+												"user",
+												"holiday-mode"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Profile User",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\":\"3\",\r\n    \"localtion\":\"indonesia\",\r\n    \"instagram\":\"https://www.instagram.com\",\r\n    \"bio\":\"saya suka dia\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/v1/user/profile",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"v1",
+												"user",
+												"profile"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Shipping-address",
+							"item": [
+								{
+									"name": "Save",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"fullAddress\":\"fullAddress\",\r\n    \"fullName\":\"fullName\",\r\n    \"title\":\"Mr\",\r\n    \"country\":\"country\",\r\n    \"postalCode\":\"postalCode\",\r\n    \"additionalInfo\":\"additionalInfo\",\r\n    \"longitude\":\"longitude\",\r\n    \"latitude\":\"latitude\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/v1/user/shipping-address",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"v1",
+												"user",
+												"shipping-address"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n     \"id\":\"1\",\r\n    \"fullAddress\":\"ubah address\",\r\n    \"fullName\":\"fullName\",\r\n    \"title\":\"Mr\",\r\n    \"country\":\"country\",\r\n    \"postalCode\":\"postalCode\",\r\n    \"additionalInfo\":\"additionalInfo\",\r\n    \"longitude\":\"longitude\",\r\n    \"latitude\":\"latitude\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/v1/user/shipping-address",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"v1",
+												"user",
+												"shipping-address"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "List page",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{token}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "page",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "size",
+													"value": "10",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "ubah",
+													"type": "text"
+												},
+												{
+													"key": "orderby",
+													"value": "fullAddress",
+													"type": "text"
+												},
+												{
+													"key": "ordertype",
+													"value": "desc",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{host}}/v1/user/shipping-address",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"v1",
+												"user",
+												"shipping-address"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "update user name only",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"3\",\r\n    \"username\":\"usernamaubah\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/user/update-username",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										"update-username"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Photo User",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"2\",\r\n    \"image\":\"17102021112230Cbiogdata.PNG\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/user/update-image",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										"update-image"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Interest User",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"2\",\r\n    \"category\":[\r\n        {\r\n            \"id\":\"5\"\r\n        },\r\n        {\r\n            \"id\":\"4\"\r\n        }\r\n        ,\r\n        {\r\n            \"id\":\"6\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8090/api/v1/user/update-interest",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"update-interest"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "pending-Register-send-email",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"admin@mail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/rqps/resend-email",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rqps",
+										"resend-email"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "pending-sign-google",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/rqps/signin_google?clientId=1&clientSecret=1&code=1&redirectUri=1&authId=1&authSecret=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"rqps",
+										"signin_google"
+									],
+									"query": [
+										{
+											"key": "clientId",
+											"value": "1"
+										},
+										{
+											"key": "clientSecret",
+											"value": "1"
+										},
+										{
+											"key": "code",
+											"value": "1"
+										},
+										{
+											"key": "redirectUri",
+											"value": "1"
+										},
+										{
+											"key": "authId",
+											"value": "1"
+										},
+										{
+											"key": "authSecret",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get UserName By Token",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{host}}/oauth/authenticate?uri=/api/v1/user",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"oauth",
+										"authenticate"
+									],
+									"query": [
+										{
+											"key": "uri",
+											"value": "/api/v1/user"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Changes Password User",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":3,\r\n    \"newPassword\":\"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/user/reset-password",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										"reset-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Is Existing Username",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"rikialdi\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/user/isexist-username",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										"isexist-username"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Save",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Product yg punya 2\",\r\n    \"description\":\"Desc\",\r\n    \"thumbnail\":\"17102021112230Cbiogdata.PNG\",\r\n    \"stock\":\"1\",\r\n    \"sku\":\"1\",\r\n    \"price\":\"1\",\r\n    \"size\": {\r\n        \"id\":\"1\"\r\n    },\r\n    \"conditional\": {\r\n        \"id\":\"1\"\r\n    },\r\n    \"categorySub\":[\r\n        {\r\n            \"id\":\"1\"\r\n        },\r\n        {\r\n            \"id\":\"2\"\r\n        }\r\n\r\n    ],\r\n    \"productImage\":[\r\n        {\r\n            \"name\":\"a.png\",\r\n            \"type\":\"top\"\r\n        },\r\n        {\r\n            \"name\":\"b.png\",\r\n            \"type\":\"bottom\"\r\n        },\r\n        {\r\n            \"name\":\"c.png\",\r\n            \"type\":\"right\"\r\n        },\r\n        {\r\n            \"name\":\"d.png\",\r\n            \"type\":\"left\"\r\n        }\r\n    ],\r\n  \"priceShiping\":\"10.09\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"name image ubah\",\r\n    \"description\":\"Desc ubah\",\r\n    \"thumbnail\":\"17102021112230Cbiogdata.PNG\",\r\n    \"stock\":\"1\",\r\n    \"sku\":\"1\",\r\n    \"price\":\"1\",\r\n    \"size\": {\r\n        \"id\":\"1\"\r\n    },\r\n    \"conditional\": {\r\n        \"id\":\"1\"\r\n    },\r\n    \"productImage\":[\r\n        {\r\n             \"id\":\"1\",\r\n            \"name\":\"aaa2.png\",\r\n            \"type\":\"top\"\r\n        },\r\n        {\r\n            \"id\":\"2\",\r\n            \"name\":\"ba2.png\",\r\n            \"type\":\"bottom\"\r\n        },\r\n        {\r\n           \"id\":\"3\",\r\n            \"name\":\"ca2.png\",\r\n            \"type\":\"right\"\r\n        },\r\n        {\r\n            \"id\":\"4\",\r\n            \"name\":\"da2.png\",\r\n            \"type\":\"left\"\r\n        }\r\n    ],\r\n    \"categorySub\":[\r\n        {\r\n            \"id\":\"4\"\r\n        },\r\n        {\r\n            \"id\":\"3\"\r\n        },\r\n        {\r\n            \"id\":\"4\"\r\n        }\r\n\r\n    ],\r\n    \"priceShiping\":\"10.09\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product/update",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Publish UnPublish",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\":\"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product/publish",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product",
+										"publish"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product/6",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "orderby",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "ordertype",
+											"value": "asc",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "notpublished",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product Order",
+					"item": [
+						{
+							"name": "Save(Add product to shopping cart)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product-order",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product-order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT(Delete from shopping cart)",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productOrderId\":\"1\",\r\n    \"productId\":\"1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product-order",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product-order"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product-order/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product-order",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list(shopping cart products)",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "orderby",
+											"value": "id",
+											"type": "text"
+										},
+										{
+											"key": "ordertype",
+											"value": "asc",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product-order/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product-order",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product Buyer/Customer",
+					"item": [
+						{
+							"name": "list product by interest",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "page",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "size",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "orderby",
+											"value": "name",
+											"type": "text"
+										},
+										{
+											"key": "ordertype",
+											"value": "asc",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "notpublished",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/apps/product-cust",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"apps",
+										"product-cust"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "file upload",
+					"item": [
+						{
+							"name": "FIle Upload",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/Ricky Aldi/Pictures/Cbiogdata.PNG"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/upload",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIle Upload Multi",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/D:/CIMB/VipFlaggingService.java"
+										},
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/D:/CIMB/rm-tools.keystore"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/uploadMultipleFiles",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"uploadMultipleFiles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "file show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "{{token}}"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fileName",
+											"value": "02102021120545Capture123.PNG",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{host}}/v1/showFile/13102021124121Capturea.PNG",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"showFile",
+										"13102021124121Capturea.PNG"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/rqps/test",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"rqps",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "msg-pending",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"riki@gmail.com\",\r\n    \"password\":\"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{hostws}}api/auth",
+							"host": [
+								"{{hostws}}api"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create goroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer bea295d7-cc25-4e4b-a215-e36599fb9627"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"payload\":\"test1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/create",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer bea295d7-cc25-4e4b-a215-e36599fb9627",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\":\"riki\",\r\n    \"lastname\":\"pari\",\r\n    \"email\":\"riki@gmail.com\",\r\n    \"password\":\"root\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/api/user/register",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OAUTH LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"type": "text",
+						"value": "",
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "my-client-id",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/oauth/token",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
