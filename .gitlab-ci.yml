@@ -57,9 +57,9 @@ production:
     - gem install dpl
     - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
   script:
-    - dpl --provider=heroku --app=binar-test --api-key=f4b7b3e5-2034-469f-97cd-f5a8ec0f731c
-    - export HEROKU_API_KEY=f4b7b3e5-2034-469f-97cd-f5a8ec0f731c
-    - heroku run --app ecomerced2r migrate
+    - dpl --provider=heroku --app=binar-test --api-key=e1ec832e-3d4c-4efe-b995-9f281a8cf594
+    - export HEROKU_API_KEY=e1ec832e-3d4c-4efe-b995-9f281a8cf594
+    - heroku run --app binar-test migrate
   environment:
     name: production
     url: https://binar-test.herokuapp.com
