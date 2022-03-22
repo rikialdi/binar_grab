@@ -49,7 +49,7 @@ deploy-job:      # This job runs in the deploy stage.
 #  only:
 #    refs:
 #      - master
-
+#https://velmuruganv.wordpress.com/2017/01/15/gitlab-spring-boot-heroku-continuous-integration-and-deployment/
 production:
   image: ruby:2.4
   stage: deploy
