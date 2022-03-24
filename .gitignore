@@ -33,4 +33,5 @@ build/
 .vscode/
 
 /cdn/
+cdn/
 .gitlab-ci.yml
