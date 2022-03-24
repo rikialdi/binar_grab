@@ -4,6 +4,7 @@ import com.binar.grab.controller.fileupload.FileStorageProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableConfigurationProperties({
@@ -11,6 +12,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 })
 //@OpenAPIDefinition
 //@EnableSwagger2
+@EnableScheduling
 public class GrabApplication {
 
 	public static void main(String[] args) {
