@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+./cdn/
+.gitlab-ci.yml
