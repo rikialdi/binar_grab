@@ -25,7 +25,7 @@
 
 
                         <div style="font-size: 12px; color: #000000;">
-                            <b>Dear,${buyername}</b> <br>
+                            <b>Dear,${namesaya}</b> <br>
                             <br> Your order confirmation from:
                             <table><tr>
                                     <td width="20"><img src="${iconuser}" alt="Avatar" style="width:30px;height:30px;  border-radius: 50%"></td>

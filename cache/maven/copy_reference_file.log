@@ -1,0 +1,3 @@
+--- Copying all files to /var/maven/.m2 at Fri Mar 25 15:11:10 WIB 2022
+'./settings-docker.xml' -> '/var/maven/.m2/./settings-docker.xml'
+

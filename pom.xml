@@ -5,8 +5,9 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.1</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.1.8.RELEASE</version>
+<!--		ini perlu ditambahakn di docker-compose, dan perlu diapus depedenci yang duplicate-->
+<!--		<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
 	</parent>
 	<groupId>com.binar</groupId>
 	<artifactId>grab</artifactId>
@@ -71,22 +72,22 @@
 		</dependency>
 
 <!--		JUNIT-->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-test</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>junit</groupId>-->
+<!--			<artifactId>junit</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>junit</groupId>-->
+<!--			<artifactId>junit</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-test</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework</groupId>-->
+<!--			<artifactId>spring-test</artifactId>-->
+<!--		</dependency>-->
 <!--		<dependency>-->
 <!--			<groupId>org.junit.jupiter</groupId>-->
 <!--			<artifactId>junit-jupiter-api</artifactId>-->
@@ -174,7 +175,7 @@
 <!--			<releases>-->
 <!--				<enabled>false</enabled>-->
 <!--			</releases>-->
-<!--		</repository>-->
+<!--		</repository> -->
 <!--	</repositories>-->
 <!--	<pluginRepositories>-->
 <!--		<pluginRepository>-->

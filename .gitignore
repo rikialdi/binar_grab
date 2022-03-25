@@ -33,3 +33,5 @@ build/
 .vscode/
 cdn/
 .gitlab-ci.yml
+
+cache/
