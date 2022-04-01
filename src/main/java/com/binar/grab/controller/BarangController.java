@@ -11,6 +11,7 @@ import com.binar.grab.service.oauth.Oauth2UserDetailsService;
 import com.binar.grab.util.SimpleStringUtils;
 import com.binar.grab.util.TemplateResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -22,13 +23,19 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.Principal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import com.binar.grab.service.BarangService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/v1/binar/barang")
@@ -139,6 +146,41 @@ public class BarangController {
         return idUser;
     }
 
+    @Value("${app.uploadto.cdn}")//FILE_SHOW_RUL
+    private String UPLOADED_FOLDER;
+
+    @PostMapping(value = "/uploadsimpanbarang/{idsupplier}",consumes = {"multipart/form-data", "application/json"})
+    public ResponseEntity<Map> uploadFile(
+            @RequestParam(value="file", required = true) MultipartFile file,
+            @PathVariable(value = "idsupplier") Long idsupplier,
+            @RequestParam(value="nama", required = true) String nama,
+            @RequestParam(value="stok", required = true) int stok,
+            @RequestParam(value="satuan", required = true) String  satuan,
+            @RequestParam(value="harga", required = true) double harga
+    )  {
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("ddMyyyyhhmmss");
+        String strDate = formatter.format(date);
+        String fileName = UPLOADED_FOLDER + strDate + file.getOriginalFilename();
+        String fileNameforDOwnload = strDate + file.getOriginalFilename();
+        Path TO = Paths.get(fileName);
+        Map map = new HashMap();
+        try {
+            Files.copy(file.getInputStream(), TO); // pengolahan upload disini :
+            // insert barang
+            Barang b = new Barang();
+            b.setNama(nama);
+            b.setStok(stok);
+            b.setSatuan(satuan);
+            b.setHarga(harga);
+            b.setFileName(fileNameforDOwnload);
+            map = barangService.insert(b, idsupplier);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<Map>(templateResponse.templateEror("eror"), HttpStatus.OK);
+        }
+        return new ResponseEntity<Map>(templateResponse.templateSukses(map), HttpStatus.OK);
+    }
 
 
 

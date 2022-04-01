@@ -34,5 +34,6 @@ public class Barang extends AbstractDate implements Serializable {
     @ManyToOne(targetEntity = Supplier.class, cascade = CascadeType.ALL)
     private Supplier supplier;//ok supplier_id
 
+    private String fileName;
 
 }
