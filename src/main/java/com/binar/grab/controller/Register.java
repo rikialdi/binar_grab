@@ -20,6 +20,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
 import java.util.*;
 
 @RestController
@@ -48,7 +50,8 @@ public class Register {
 
     //step 1
     @PostMapping("/register")
-    public ResponseEntity<Map> saveRegisterManual(@RequestBody RegisterModel objModel) throws RuntimeException {
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<Map> saveRegisterManual(@Valid @RequestBody RegisterModel objModel) throws RuntimeException {
         Map map = new HashMap();
 
         User user = userRepository.checkExistingEmail(objModel.getEmail());
