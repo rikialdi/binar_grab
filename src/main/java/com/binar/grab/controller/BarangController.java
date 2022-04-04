@@ -37,6 +37,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.ConstraintViolationException;
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/v1/binar/barang")
 public class BarangController {
@@ -61,8 +64,9 @@ public class BarangController {
     SimpleStringUtils simpleStringUtils = new SimpleStringUtils();
 
     @PostMapping("/save/{idsupplier}")
+    @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<Map> save(@PathVariable(value = "idsupplier") Long idsupplier,
-                                    @RequestBody Barang objModel) {
+                                    @Valid @RequestBody Barang objModel) {
         Map obj = barangService.insert(objModel, idsupplier);
         return new ResponseEntity<Map>(obj, HttpStatus.OK);
     }

@@ -40,9 +40,9 @@ public class BarangImpl implements BarangService {
     @Override
     public Map insert(Barang obj, Long idsupplier) {
         try {
-            if (templateResponse.chekNull(obj.getNama())) {
-                return templateResponse.templateEror("Nama is Requiered");
-            }
+//            if (templateResponse.chekNull(obj.getNama())) {
+//                return templateResponse.templateEror("Nama is Requiered");
+//            }
 
             if (templateResponse.chekNull(obj.getHarga())) {
                 return templateResponse.templateEror("Harga is requiered");

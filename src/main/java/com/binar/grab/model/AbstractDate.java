@@ -12,7 +12,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@Data
+//@Data
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(
@@ -37,4 +37,28 @@ public abstract class AbstractDate implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "deleted_date", nullable = true)
     private Date deleted_date;
+
+    public Date getCreated_date() {
+        return created_date;
+    }
+
+    public void setCreated_date(Date created_date) {
+        this.created_date = created_date;
+    }
+
+    public Date getUpdated_date() {
+        return updated_date;
+    }
+
+    public void setUpdated_date(Date updated_date) {
+        this.updated_date = updated_date;
+    }
+
+    public Date getDeleted_date() {
+        return deleted_date;
+    }
+
+    public void setDeleted_date(Date deleted_date) {
+        this.deleted_date = deleted_date;
+    }
 }

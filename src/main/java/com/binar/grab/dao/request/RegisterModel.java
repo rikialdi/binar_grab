@@ -5,6 +5,7 @@ import com.binar.grab.controller.validationpass.annotation.ValidPassword;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @PasswordValueMatch.List({
         @PasswordValueMatch(
@@ -21,11 +22,11 @@ public class RegisterModel {
     public String username;
 
     @ValidPassword
-    @NotEmpty(message = "Password is mandatory")
+    @NotNull(message =  "Password is mandatory")
     public String password;
 
     @ValidPassword
-    @NotEmpty(message = "Confirm Password is mandatory")
+    @NotNull(message =  "Password is mandatory")
     private String confirmPassword;
 
     public String getConfirmPassword() {
