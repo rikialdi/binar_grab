@@ -47,8 +47,14 @@ public class FileController {
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("ddMyyyyhhmmss");
         String strDate = formatter.format(date);
-        String fileName = UPLOADED_FOLDER + strDate + file.getOriginalFilename();
-        String fileNameforDOwnload = strDate + file.getOriginalFilename();
+        String nameFormat= file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(".") );
+        if(nameFormat.isEmpty()){
+            nameFormat = ".png";
+        }
+        String fileName = UPLOADED_FOLDER + strDate + nameFormat;
+
+
+        String fileNameforDOwnload = strDate + nameFormat;
         Path TO = Paths.get(fileName);
 
 //        //validasi hanya boleh PNG
@@ -62,7 +68,7 @@ public class FileController {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return new UploadFileResponse(fileName, null,
+            return new UploadFileResponse(fileNameforDOwnload, null,
                     file.getContentType(), file.getSize(), e.getMessage());
         }
 

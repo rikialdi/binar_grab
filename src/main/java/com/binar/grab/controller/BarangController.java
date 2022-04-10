@@ -127,7 +127,7 @@ public class BarangController {
         } else if ( priceMin !=null && priceMax != null ) {
             list = barangRepository.getDataByPrice(priceMin,priceMax, show_data);
         } else if (nama != null ) {
-            list = barangRepository.findByNamaLike("'%" + nama + "%'", show_data);
+            list = barangRepository.findByNamaLike("%" + nama + "%", show_data);
         } else {
             list = barangRepository.getAllData(show_data);
         }

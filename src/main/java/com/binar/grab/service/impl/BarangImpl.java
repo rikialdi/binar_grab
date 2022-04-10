@@ -168,7 +168,9 @@ public class BarangImpl implements BarangService {
            /*
            1. buat query dulu where nama barang = like
             */
-            Page<Barang> list = barangRepository.findByNamaLike("'%" + nama + "%'", pageable);
+            //tidak pake kutip
+            //perhatikan tolowercasenya
+            Page<Barang> list = barangRepository.findByNamaLike("%" + nama + "%", pageable);
 //             public Page<Barang> findByNamaLike(String nama , Pageable pageable);
             return list;
         } catch (Exception e) {

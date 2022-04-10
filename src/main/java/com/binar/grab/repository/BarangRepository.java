@@ -26,6 +26,7 @@ public interface BarangRepository extends
 
 //    @Query("select c from Barang c where c.nama like :nama")// nama class
 
+    // perhatikan lowernya
     public Page<Barang> findByNamaLike(String nama , Pageable pageable);
 
     public Barang findBySatuan(String satuan);

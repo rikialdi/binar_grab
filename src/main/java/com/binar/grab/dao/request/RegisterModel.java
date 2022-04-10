@@ -3,9 +3,7 @@ package com.binar.grab.dao.request;
 import com.binar.grab.controller.validationpass.annotation.PasswordValueMatch;
 import com.binar.grab.controller.validationpass.annotation.ValidPassword;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
 @PasswordValueMatch.List({
         @PasswordValueMatch(
@@ -16,7 +14,11 @@ import javax.validation.constraints.NotNull;
 })
 public class RegisterModel {
     public Long id;
-
+    @Size(
+            min = 5,
+            max = 14,
+            message = "The author email '${validatedValue}' must be between {min} and {max} characters long"
+    )
     public String email;
 
     public String username;

@@ -30,7 +30,7 @@ public class PasswordConstraintValidator implements ConstraintValidator<ValidPas
                 .getClassLoader().getResourceAsStream("passay.properties");
         props.load(inputStream);
         MessageResolver resolver = new PropertiesMessageResolver(props);
-
+//https://www.tutorialspoint.com/passay/passay_quick_guide.htm
         PasswordValidator validator = new PasswordValidator(resolver, Arrays.asList(
 /*
 example : Aa1@231456
