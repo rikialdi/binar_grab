@@ -1,21 +1,25 @@
-package com.binar.grab.service;
+package com.binar.grab.service.procedure;
 
 import com.binar.grab.model.Barang;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Map;
 
-public interface BarangService {
-    public Map insert(Barang barang, Long idsupplier);
+public interface BarangServiceProcedure {
+    public List<Object> getBarangLikeNama(String nama);
 
-    public Map update(Barang barang, Long idsupplier);
+//    public List<BarangProcedure> getBarangLikeNama2(String nama);
 
-    public Map delete(Long barang);
+    public Object updateProcedure();
 
-    public Map getAll(int size, int page);
+//    public BarangProcedure updateProcedure2();
 
-    public Map findByNama(String nama, Integer page, Integer size);
 
-    Page<Barang> findByNamaLike(String nama, Pageable pageable);
+
+
+
+
+
 }

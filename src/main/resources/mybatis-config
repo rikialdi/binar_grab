@@ -10,21 +10,21 @@
 <!--</resource>-->
 <!--        https://www.concretepage.com/mybatis-3/mybatis-3-annotation-example-with-select-insert-update-and-delete-->
 <configuration>
-    <mappers>
-        <mapper resource="com.binar.grab.junit.scmt_manual.xml"/>
-    </mappers>
-    <resource>
-        <directory>src/main/java</directory>
-        <filtering>true</filtering>
-        <includes>
-            <include>**/*.xml</include>
-        </includes>
-    </resource>
+<!--    <mappers>-->
+<!--        <mapper resource="com.binar.grab.junit.scmt_manual.xml"/>-->
+<!--    </mappers>-->
+<!--    <resource>-->
+<!--        <directory>src/main/java</directory>-->
+<!--        <filtering>true</filtering>-->
+<!--        <includes>-->
+<!--            <include>**/*.xml</include>-->
+<!--        </includes>-->
+<!--    </resource>-->
 
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="configLocation" value="classpath:mybatis-config.xml" />
-        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml" />
-    </bean>
+<!--    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--        <property name="configLocation" value="classpath:mybatis-config.xml" />-->
+<!--        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml" />-->
+<!--    </bean>-->
     <mappers>
         <mapper resource="com.binar.grab.junit.scmt_manual.xml"/>
     </mappers>

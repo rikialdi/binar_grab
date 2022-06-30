@@ -8,6 +8,7 @@ import com.binar.grab.repository.BarangRepository;
 import com.binar.grab.repository.oauth.UserRepository;
 import com.binar.grab.service.SupplierService;
 import com.binar.grab.service.oauth.Oauth2UserDetailsService;
+import com.binar.grab.service.procedure.BarangServiceProcedure;
 import com.binar.grab.util.SimpleStringUtils;
 import com.binar.grab.util.TemplateResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,7 @@ import java.security.Principal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import com.binar.grab.service.BarangService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +48,9 @@ public class BarangController {
 
     @Autowired
     public BarangService barangService;
+
+    @Autowired
+    public BarangServiceProcedure barangServiceProcedure;
 
     Config config = new Config();
 
@@ -186,6 +191,14 @@ public class BarangController {
         return new ResponseEntity<Map>(templateResponse.templateSukses(map), HttpStatus.OK);
     }
 
-
+    @GetMapping("/list-procedure")
+    public ResponseEntity<Map> listByBamaProcedure() {
+        List<Object> list = barangServiceProcedure.getBarangLikeNama("bar");
+        Map map = new HashMap();
+        map.put("data", list);
+        map.put("message", "sukses");
+        map.put("status", "200");
+        return new ResponseEntity<>(map, new HttpHeaders(), HttpStatus.OK);
+    }
 
 }

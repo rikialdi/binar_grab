@@ -25,6 +25,7 @@ import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -59,11 +60,63 @@ public class EmailService {
 //            File file = new File("./cdn/downloaded.jpg");
 //            ImageIO.write(img, "jpg", file);
 //            helper.addAttachment("image1", file);
-            String fileName= "./cdn/Captureass.PNG";
+            String fileName= "./cdn/sss.pdf";
             File file2 = new File(fileName);
             String formatFile = fileName.substring(fileName.lastIndexOf(".") );
             helper.addAttachment(config2.convertDateToString(new Date())+"image4"+formatFile, file2);
 
+
+            Template t = config.getTemplate("email-template.ftl");
+            String html = FreeMarkerTemplateUtils.processTemplateIntoString(t, model);
+
+            helper.setTo(request.getTo());
+//            helper.setTo(emailPengirim);
+            helper.setText(html, true);
+            helper.setSubject(request.getSubject());
+            helper.setFrom(request.getFrom());
+            sender.send(message);
+
+            response.setMessage("mail send to : " + request.getTo());
+            response.setStatus(Boolean.TRUE);
+
+        } catch (MessagingException | IOException | TemplateException e) {
+            response.setMessage("Mail Sending failure : " + e.getMessage());
+            response.setStatus(Boolean.FALSE);
+        }
+
+        return response;
+    }
+
+    public MailResponse sendEmailWithFile(MailRequest request, Map model) {
+        MailResponse response = new MailResponse();
+        MimeMessage message = sender.createMimeMessage();
+        try {
+            // set mediaType
+            MimeMessageHelper helper = new MimeMessageHelper(message, MimeMessageHelper.MULTIPART_MODE_MIXED_RELATED,
+                    StandardCharsets.UTF_8.name());
+            // add attachment :naro logo di di../resources
+            helper.addAttachment("logo.png", new ClassPathResource("logo.png"));
+
+//            13.	Download Gimage dari gambar kemudian simpan ke local
+//            URL url = new URL("https://binar-test.herokuapp.com/api/showFile/2432022025921Captureass.PNG");//("http://google.com/pathtoaimage.jpg");
+//            BufferedImage img = ImageIO.read(url);
+//            File file = new File("./cdn/downloaded.jpg");
+//            ImageIO.write(img, "jpg", file);
+//            helper.addAttachment("image1", file);
+
+//            String fileName= "./cdn/sss.pdf";
+//            File file2 = new File(fileName);
+//            String formatFile = fileName.substring(fileName.lastIndexOf(".") );
+//            helper.addAttachment(config2.convertDateToString(new Date())+"image4"+formatFile, file2);
+
+            List<String> dataFIle = (List<String>) model.get("dataFile");
+            for(String ab : dataFIle){
+                String fileName= "./cdn/"+ab;
+                File file2 = new File(fileName);
+                String formatFile = fileName.substring(fileName.lastIndexOf(".") );
+                System.out.println("fileName="+fileName);
+                helper.addAttachment(config2.convertDateToString(new Date())+ab+formatFile, file2);
+            }
 
             Template t = config.getTemplate("email-template.ftl");
             String html = FreeMarkerTemplateUtils.processTemplateIntoString(t, model);

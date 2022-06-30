@@ -16,7 +16,7 @@ public class RegisterModel {
     public Long id;
     @Size(
             min = 5,
-            max = 14,
+            max = 50,
             message = "The author email '${validatedValue}' must be between {min} and {max} characters long"
     )
     public String email;

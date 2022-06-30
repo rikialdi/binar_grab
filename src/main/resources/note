@@ -7,3 +7,6 @@
 
     link postman
     https://www.getpostman.com/collections/126c3e05cb7c42eb2cb8
+
+store prosedure with postgres:
+https://www.postgresqltutorial.com/postgresql-plpgsql/postgresql-create-procedure/

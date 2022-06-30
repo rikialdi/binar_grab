@@ -6,4 +6,7 @@
         #{rqnama,mode=IN,jdbcType=NUMERIC})
     </select>
 
+    <update id="updatebarangxml" parameterType="map" statementType="CALLABLE">
+        {CALL public.updatebarang(#{rqharga,mode=IN},#{rqnama,mode=IN},#{rqsatuan,mode=IN},#{rqstok,mode=IN},#{resid,mode=IN})}
+    </update>
 </mapper>

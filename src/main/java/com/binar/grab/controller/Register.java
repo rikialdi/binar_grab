@@ -4,17 +4,25 @@ package com.binar.grab.controller;
 import com.binar.grab.config.Config;
 import com.binar.grab.config.Oauth2AccessTokenConverter;
 import com.binar.grab.dao.request.RegisterModel;
+import com.binar.grab.model.Barang;
 import com.binar.grab.model.oauth.User;
+import com.binar.grab.repository.BarangRepository;
 import com.binar.grab.repository.oauth.UserRepository;
 import com.binar.grab.service.UserService;
 import com.binar.grab.service.email.EmailSender;
+import com.binar.grab.service.email.email.EmailService;
+import com.binar.grab.service.email.email.MailRequest;
+import com.binar.grab.service.email.email.MailResponse;
 import com.binar.grab.util.EmailTemplate;
 import com.binar.grab.util.SimpleStringUtils;
 import com.binar.grab.util.TemplateResponse;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -35,6 +43,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
+import java.math.BigDecimal;
 import java.util.*;
 
 @RestController
@@ -262,6 +271,44 @@ public class Register {
         return ResponseEntity.ok().body("Access token invalidated successfully");
     }
 
+    @Autowired
+    public BarangRepository barangRepository;
+
+    SimpleStringUtils simpleStringUtils = new SimpleStringUtils();
+
+
+    @Autowired
+    private EmailService service;
+
+    @PostMapping("/sendemailfile")
+    public ResponseEntity<String> sendemailfile(HttpServletRequest request3) {
+        MailRequest request = new MailRequest();
+        request.setName("Invoice Test name");
+        request.setTo("rikialdipari@gmail.com");
+        request.setFrom("rikialdipari@gmail.com");
+        request.setSubject("Invoice Test");
+        Map model = new HashMap<>();
+        model.put("namesaya", "riki aldi pari");
+
+        model.put("chuteicon", "https://binar-test.herokuapp.com/api/showFile/2432022025921Captureass.PNG");
+        BigDecimal total= new BigDecimal(0);
+
+        Pageable show_data = simpleStringUtils.getShort("id", "desc", 0, 1);
+        Page<Barang> data = barangRepository.getAllData(show_data);
+
+
+        model.put("datainvoice", data.getContent());
+        model.put("iconuser","https://binar-test.herokuapp.com/api/showFile/2432022025921Captureass.PNG") ;
+
+        List<String> dataFIle = new ArrayList<>();
+        dataFIle.add(0, "sss.pdf");
+        dataFIle.add(1, "s2.pdf");
+        dataFIle.add(2, "s3.pdf");
+        model.put("dataFile",dataFIle);
+        MailResponse ma =  service.sendEmailWithFile(request, model);
+        System.out.println("MailResponse 1="+ma.getMessage());
+        return ResponseEntity.ok().body("Access token invalidated successfully");
+    }
 //    protected Authentication authenticate(Authentication authentication, String  tokenTEST) {
 //        if (authentication == null) {
 //            throw new InvalidTokenException("Invalid token (token not found)");

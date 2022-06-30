@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Repository //step 2
 public interface BarangRepository extends
@@ -44,4 +45,26 @@ public interface BarangRepository extends
     Page<Barang> getDataByPriceAndNama( Double priceMin, Double priceMax,String nama, Pageable pageable);
 
 
+    // function or procedure postgres : sukses ini
+    @Query( value = "select resid,  resnama,  resstok,  resharga,  ressatuan from public.getBarang1(:rqNama)", nativeQuery = true)
+    List<Object> getBarang1(@Param("rqNama") String rqNama);
+
+    //gagal
+//    @Query( value = "select new com.binar.grab.dao.response.BarangProcedure(resid,  resnama,  resstok,  resharga,  ressatuan) from public.getBarang1(:rqNama)", nativeQuery = true)
+//    List<BarangProcedure> getBarang2(@Param("rqNama") String rqNama);
+
+    @Query(value = "CALL public.updatebarang(:harga1,:nama1,:satuan1,:stok1,:resid);", nativeQuery = true)
+    Object updateBarangProcedure(@Param("harga1") Integer harga1,
+                                 @Param("nama1") String nama1,
+                                 @Param("satuan1") String satuan1,
+                                 @Param("stok1") Integer stok1,
+                                 @Param("resid") Integer resid);
+
+//    ..gagal
+//    @Query(value = "CALL public.updatebarang(:harga1,:nama1,:satuan1,:stok1,:resid);", nativeQuery = true)
+//    BarangProcedure updateBarangProcedure2(@Param("harga1") Integer harga1,
+//                                 @Param("nama1") String nama1,
+//                                 @Param("satuan1") String satuan1,
+//                                 @Param("stok1") Integer stok1,
+//                                 @Param("resid") Integer resid);
 }
